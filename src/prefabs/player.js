@@ -8,12 +8,18 @@ class player extends Phaser.Physics.Arcade.Sprite {
         this.setMaxVelocity(300,300);
         this.setBlendMode('SCREEN');
         this.canDoubleJump = true;
+        this.jump = scene.sound.add('jump');
+        this.landing = scene.sound.add('landing');
     }
 
     update() {
-        if(this.y == game.config.height && SPACE.isDown){
-            this.body.velocity.y -= 400;
+        if(this.y==game.config.height && this.canDoubleJump == false){
+            this.landing.play();
             this.canDoubleJump = true;
+        }
+        if(this.y == game.config.height && SPACE.isDown){
+            this.jump.play();
+            this.body.velocity.y -= 400;
         }
         else if(this.y != game.config.height && keyF.isDown && this.canDoubleJump){
             this.body.velocity.y = -200;

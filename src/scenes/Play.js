@@ -12,6 +12,13 @@ class Play extends Phaser.Scene {
     }
 
     create(){
+      this.bgm = this.sound.add('bgm', { 
+        mute: false,
+        volume: .25,
+        rate: 1,
+        loop: true 
+      });
+      this.bgm.play();
       this.bg = this.add.tileSprite(0, 0, 640, 480, 'badbgplzchange').setOrigin(0, 0);
       this.player = new player(this, game.config.width/2, game.config.height, 'player').setOrigin(1, 1);
       this.speed = 1;
@@ -58,8 +65,8 @@ class Play extends Phaser.Scene {
       if(){}
       else if(){}
       else{}*/
-      //let obstacles = new Barrier(this, this.barrierSpeed - speedVariance);
       let obstacle = new HAND(this, game.config.width, game.config.height, 'HAND').setOrigin(1,1);
+      this.sound.play('zombie');
       this.obstaclesGroup.add(obstacle);
     }
 
@@ -83,13 +90,13 @@ class Play extends Phaser.Scene {
       }
     }
     KILL(){
+      this.bgm.stop();
       this.playerAlive = false;
       this.player.setCollideWorldBounds(false);
       if(Phaser.Math.RoundTo((this.currTime - this.startTime)/1000,0) > game.highScore){
         game.highScore = Phaser.Math.RoundTo((this.currTime - this.startTime)/1000,0);
       }
       this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', this.TimeConfig).setOrigin(0.5);
-      this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (<-) to Restart', this.TimeConfig2).setOrigin(0.5);
       this.add.text(game.config.width/2, game.config.height/2 + 96, 'Longest Denial:' + game.highScore, this.TimeConfig2).setOrigin(0.5);
       setTimeout(this.gameOver(this), 3000);
     }

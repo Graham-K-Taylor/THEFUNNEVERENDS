@@ -1,16 +1,21 @@
+//Name: Graham Taylor
+//Game Title: Mortem of a game
+//Approx hours: 19
+//creative tilt: I implemented a double jump in the physics engine for the technical portion, and i drew the 2 backgrounds for the creative portion, though I'm not the best artist nor did I spend nearly enough time on this.
+
 // OK BOIS WE GOT WORK TO DO:
-// Include ingame instructions
+// Include ingame instructions DONE
 // Include 1-more animated characters using a texture atlas
-// Simulate scrolling with a tilesprite
-// Implement collision w/ arcade physics
+// Simulate scrolling with a tilesprite DONE
+// Implement collision w/ arcade physics DONE
 // have looping bg moosic
-// use like atleast 3 sfx
-// use random to generate greater challenge as it continues.
-// include a number to go up for player (score, time, etc.)
-// Be endless
-// Be playable for 15 seconds for Natha- I mean, for the average low skilled player
-// dont crash/error
-// include in-game credits for all roles, assets, music, etc.
+// use like atleast 3 sfx DONE
+// use random to generate greater challenge as it continues. DONE
+// include a number to go up for player (score, time, etc.) DONE
+// Be endless DONE
+// Be playable for 15 seconds for Natha- I mean, for the average low skilled player DONE
+// dont crash/error DONE
+// include in-game credits for all roles, assets, music, etc. DONE
 // do something technically interesting
 // do something with artistic flair
 

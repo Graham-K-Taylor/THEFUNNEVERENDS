@@ -4,6 +4,10 @@ class Menu extends Phaser.Scene {
     }
     preload() {
         // load audio / any visuals as needed
+        this.load.audio('jump', 'assets/jump.wav');
+        this.load.audio('landing', 'assets/landing.wav');
+        this.load.audio('zombie', 'assets/zombie.wav');
+        this.load.audio('bgm', 'assets/creepy.mp3');
     }
     create() {
         if(game.highScore === undefined){
@@ -25,7 +29,7 @@ class Menu extends Phaser.Scene {
         this.add.text(game.config.width/2, game.config.height/2,'SUFFER', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding,'Press <- on this for instructions, and <- on that screen to begin, -> for credits.', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding,'<- to move on, -> for credits.', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + game.config.height/2.2,'Longest Denial:'+ game.highScore, menuConfig).setOrigin(0.5);
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
