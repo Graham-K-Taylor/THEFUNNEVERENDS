@@ -7,8 +7,7 @@ class Play extends Phaser.Scene {
       this.load.image('playercrouchin', './assets/playercrouchin.png');
       this.load.image('HAND', './assets/HAND.png');
       this.load.image('badbgplzchange', './assets/badbgplzchange.png');
-      // load spritesheet (for animations, implement tomorrow!)
-      // this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+     /* this.load.atlas('movinhands', './assets/HANDS.png', './assets/HAND.json');*/
     }
 
     create(){
@@ -46,6 +45,13 @@ class Play extends Phaser.Scene {
         },
         fixedWidth: 200
       }
+      /*this.anims.create({
+        key: 'idle',
+        frames: this.anims.generateFrameNumbers('HAND', { start: 0, end: 1, first: 0}),
+
+        frameRate: 2,
+        repeat: 1
+    });*/
       this.TimeConfig2 = {
         fontFamily: 'Courier',
         fontSize: '28px',
@@ -66,6 +72,7 @@ class Play extends Phaser.Scene {
       else if(){}
       else{}*/
       let obstacle = new HAND(this, game.config.width, game.config.height, 'HAND').setOrigin(1,1);
+      /*obstacle.anims.play('idle');*/
       this.sound.play('zombie');
       this.obstaclesGroup.add(obstacle);
     }
