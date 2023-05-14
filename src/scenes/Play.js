@@ -91,10 +91,10 @@ class Play extends Phaser.Scene {
       this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', this.TimeConfig).setOrigin(0.5);
       this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (<-) to Restart', this.TimeConfig2).setOrigin(0.5);
       this.add.text(game.config.width/2, game.config.height/2 + 96, 'Longest Denial:' + game.highScore, this.TimeConfig2).setOrigin(0.5);
-      setTimeout(this.gameOver, 3000);
+      setTimeout(this.gameOver(this), 3000);
     }
 
-    gameOver(){
-      game.scene.start("menuScene");
+    gameOver(Sceen){
+      Sceen.scene.start("menuScene");
     }
 }
