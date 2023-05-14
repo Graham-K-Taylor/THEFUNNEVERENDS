@@ -32,7 +32,7 @@ let config = {
           }
       }
     },
-    scene: [ Menu, Play ]
+    scene: [ Menu, Play, Credits, Explanation ]
   }
 let game = new Phaser.Game(config);
 let borderUISize = game.config.height / 15;

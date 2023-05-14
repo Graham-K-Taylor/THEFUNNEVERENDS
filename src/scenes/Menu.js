@@ -25,7 +25,7 @@ class Menu extends Phaser.Scene {
         this.add.text(game.config.width/2, game.config.height/2,'SUFFER', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding,'Press <- to begin.', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding,'Press <- on this for instructions, and <- on that screen to begin, -> for credits.', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + game.config.height/2.2,'Longest Denial:'+ game.highScore, menuConfig).setOrigin(0.5);
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -38,7 +38,11 @@ class Menu extends Phaser.Scene {
           game.settings = {
             testparameter : 1 
           }
-          this.scene.start('playScene');    
+          this.scene.start('explanationScene');    
         }
+        if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
+            // easy mode
+            this.scene.start('creditsScene');    
+          }
     }
 }
